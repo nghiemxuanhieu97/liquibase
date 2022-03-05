@@ -1,0 +1,11 @@
+databaseChangeLog:
+  - changeSet:
+      id: 2
+      author: thu
+      comment: CDOP-2 change datatype
+      changes:
+        - modifyDataType:
+            columnName: name
+            newDataType: varchar(50)
+            schemaName: dbo
+            tableName: city

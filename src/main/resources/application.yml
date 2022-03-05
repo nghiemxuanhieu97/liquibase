@@ -1,0 +1,21 @@
+server:
+  port: 8080
+spring:
+  datasource:
+    url: jdbc:sqlserver://localhost\\SQLEXPRESS:1433;databaseName=liquibase_demo;integratedSecurity=false
+    username: sa
+    password: 1234
+    driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+#  jpa:
+#    show-sql: true
+#    generate-ddl: false
+#    hibernate:
+#      ddl-auto: none
+#TODO: Just you when changelog file have different name. Default name: db.changelog-master.yaml
+#  liquibase:
+#    change-log: classpath:db\changelog\changelog-master.yaml
+#    enabled: false
+
+logging:
+  level:
+    liquibase: INFO

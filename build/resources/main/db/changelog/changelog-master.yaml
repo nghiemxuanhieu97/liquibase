@@ -1,0 +1,7 @@
+databaseChangeLog:
+  - include:
+      file: db/migration/init-table.yaml
+  - include:
+      file: db/migration/change-data-type.yaml
+  - include:
+      file: db/migration/add-person-table.yaml
