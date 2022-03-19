@@ -1,11 +1,11 @@
-package liquibasedemo;
+package liquibase;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class LiquibaseDemoApplication {
+public class LiquibaseApplication {
   public static void main(String[] args) {
-    SpringApplication.run(LiquibaseDemoApplication.class, args);
+    SpringApplication.run(LiquibaseApplication.class, args);
   }
 }

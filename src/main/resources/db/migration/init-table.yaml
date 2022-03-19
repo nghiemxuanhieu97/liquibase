@@ -1,17 +1,47 @@
 databaseChangeLog:
   - changeSet:
+      # Value of id is unix time which is gotten from https://www.epochconverter.com/
       id: 1
       author: hieunghiem
-      comment: CDOP-1 create table city
+      comment: CDOP-1 create table pharmacy
       changes:
         -  createTable:
-             tableName: city
              schemaName: dbo
+             tableName: pharmacy
              columns:
                -  column:
                     name: id
-                    type: int
+                    type: bigint
+                    autoIncrement: true
+                    constraints:
+                      primaryKey: true
                -  column:
-                    name: name
-                    type: varchar(255)
+                    name: member
+                    type: varchar(15)
+               -  column:
+                    name: ncpdp
+                    type: varchar(7)
+               -  column:
+                    name: description
+                    type: varchar(15)
+               -  column:
+                    name: created_date
+                    type: datetime
+               -  column:
+                    name: favorite
+                    type: bit
+        - addNotNullConstraint:
+            constraintName: nn_pharmacy_member
+            columnName: member
+            columnDataType: varchar(15)
+            schemaName: dbo
+            tableName: pharmacy
+            validate: true
+        - addUniqueConstraint:
+            constraintName: uq_pharmacy_identifiers
+            columnNames: member, ncpdp
+            schemaName: dbo
+            tableName: pharmacy
+            validate: true
+
 

@@ -1,9 +1,9 @@
 USE master
 GO
 
-IF NOT EXISTS (SELECT * FROM sys.databases WHERE name = 'demo1')
+IF NOT EXISTS (SELECT * FROM sys.databases WHERE name = 'liquibase')
 BEGIN
-  CREATE DATABASE demo1;
+  CREATE DATABASE liquibase;
 END;
 GO
 

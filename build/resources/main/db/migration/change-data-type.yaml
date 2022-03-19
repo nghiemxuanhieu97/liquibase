@@ -1,11 +1,12 @@
 databaseChangeLog:
   - changeSet:
+      # Value of id is unix time which is gotten from https://www.epochconverter.com/
       id: 2
-      author: thu
+      author: hieunghiem
       comment: CDOP-2 change datatype
       changes:
         - modifyDataType:
-            columnName: name
-            newDataType: varchar(50)
+            columnName: description
+            newDataType: varchar(200)
             schemaName: dbo
-            tableName: city
+            tableName: pharmacy
